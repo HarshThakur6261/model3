@@ -1,0 +1,40 @@
+
+# X['weighted_SSA'] = (
+#     0.5 * X['gender_ratio'] +   # Most weight to gender_ratio
+#     0.3 * X['avg_age'] +        # Next highest weight to avg_age
+#     0.2 * X['avg_income']       # Least weight to avg_income
+# )
+
+# # Apply weighting to KVP based on agriculture_occupation_ratio, avg_income, avg_age, gender_ratio in decreasing order
+# X['weighted_KVP'] = (
+#     0.4 * X['agriculture_occupation_ratio'] +  # Most weight to agriculture_occupation_ratio
+#     0.3 * X['avg_income'] +                    # Next highest weight to avg_income
+#     0.2 * X['avg_age'] +                       # Then avg_age
+#     0.1 * X['gender_ratio']                    # Least weight to gender_ratio
+# )
+
+# # Apply weighting to TD based on avg_income, avg_age in decreasing order
+# X['weighted_TD'] = (
+#     0.6 * X['avg_income'] +    # Most weight to avg_income
+#     0.4 * X['avg_age']         # Less weight to avg_age
+# )
+
+# # Apply weighting to RD based on gender_ratio, avg_age, avg_income in decreasing order
+# X['weighted_RD'] = (
+#     0.5 * X['gender_ratio'] +  # Most weight to gender_ratio
+#     0.3 * X['avg_age'] +       # Next highest weight to avg_age
+#     0.2 * X['avg_income']      # Least weight to avg_income
+# )
+
+# # Apply weighting to SCSS based on Mahila_Samman, gender_ratio in decreasing order
+# X['weighted_SCSS'] = (
+#     0.6 * X['avg_age'] + # Most weight to Mahila_Samman
+#     0.4 * X['gender_ratio']    # Less weight to gender_ratio
+# )
+
+# # Update y to reflect the weighted versions of each scheme
+# y['SSA'] = y['SSA'] * X['weighted_SSA']
+# y['KVP'] = y['KVP'] * X['weighted_KVP']
+# y['TD'] = y['TD'] * X['weighted_TD']
+# y['RD'] = y['RD'] * X['weighted_RD']
+# y['SCSS'] = y['SCSS'] * X['weighted_SCSS']
